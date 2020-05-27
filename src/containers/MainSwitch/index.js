@@ -69,7 +69,7 @@ function MainSwitch(props) {
 
     return (
         <HotKeys focused={true} attach={window} keyMap={keyMap} handlers={handlers}>
-            <div style={{overflowX: 'hidden', overflowY: 'hidden', display: 'flex', flexDirection: 'row', width: '100vw', }}>
+            {/*<div style={{overflowX: 'hidden', overflowY: 'hidden', display: 'flex', flexDirection: 'row', width: '100vw', }}>*/}
             <AnimatePresence initial={false}>
                 {location.pathname}
             <Switch location={location} key={location.pathname}>
@@ -101,7 +101,7 @@ function MainSwitch(props) {
                 </Route>
             </Switch>
             </AnimatePresence>
-            </div>
+            {/*</div>*/}
         </HotKeys>
     );
 }

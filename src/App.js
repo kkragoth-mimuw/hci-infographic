@@ -12,11 +12,11 @@ import MainSwitch from "./containers/MainSwitch";
 function App(props) {
 
   return (
-    <div className="App">
+    // <div className="App">
       <Router basename={'/directory-name'}>
         <MainSwitch/>
       </Router>
-    </div>
+    // </div>
   );
 }
 
