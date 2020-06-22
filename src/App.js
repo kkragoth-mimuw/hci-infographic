@@ -8,15 +8,15 @@ import {
 
 import './App.css';
 import MainSwitch from "./containers/MainSwitch";
+import TopMenu from "./containers/TopMenu";
 
 function App(props) {
 
   return (
-    // <div className="App">
       <Router basename={'/directory-name'}>
+        <TopMenu />
         <MainSwitch/>
       </Router>
-    // </div>
   );
 }
 

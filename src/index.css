@@ -33,10 +33,6 @@ ol {
   margin-block-start: 0;
 }
 
-body > #root > div {
-  height: 100vh;
-}
-
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

@@ -7,7 +7,7 @@ import iphone1 from '../../assets/imgs/1.iPhone_1.png';
 const StatisticPageWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background: #121213;
 `;
