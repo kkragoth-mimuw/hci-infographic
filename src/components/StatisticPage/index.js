@@ -1,78 +1,20 @@
 import React from 'react';
 import styled from "styled-components";
-import {Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
-import Papa from 'papaparse';
-import { actionsCsv, iphoneImgs } from "../../definitions";
+import { Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
+import { findIndex, propEq, slice } from "ramda";
 
-const StatisticPageWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100vw;
-    background: #121213;
-`;
-
-const IPhoneInfoWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    flex:3;
-`;
-
-const InfoTextWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 2rem;
-`
-
-const InfoWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
-
-const InfoColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-left: 0.5rem;
-`;
-
-const ChartWrapper = styled.div`
-    display: flex;
-    width: 100vw;
-    flex:1;
-`;
-
-// const data = [
-//     {
-//         name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
-//     },
-//     {
-//         name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
-//     },
-//     {
-//         name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
-//     },
-//     {
-//         name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
-//     },
-//     {
-//         name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
-//     },
-//     {
-//         name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
-//     },
-//     {
-//         name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
-//     },
-// ];
-
-const data = Papa.parse(actionsCsv, {header: true}).data;
-data[666]['event'] = 30;
-// console.log(data);
+import { actionsCsv, iphoneImgs, specialDates, iphoneStats } from "../../definitions";
 
 function StatisticPage({val}) {
+    const iphoneInfo = iphoneStats[val];
+
+    const { startDate, endDate } = iphoneInfo;
+
+
+    const startDateIndex = findIndex(propEq('Date', startDate), actionsCsv);
+    const endDateIndex = findIndex(propEq('Date', endDate), actionsCsv);
+    const data = slice(startDateIndex, endDateIndex, actionsCsv);
+
     return (
         <StatisticPageWrapper>
             <IPhoneInfoWrapper>
@@ -81,7 +23,7 @@ function StatisticPage({val}) {
                 </div>
                 <InfoTextWrapper>
                     <span style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
-                        {val}
+                        {iphoneInfo.title}
                 </span>
                     <InfoWrapper>
                         <InfoColumn>
@@ -128,11 +70,15 @@ function StatisticPage({val}) {
                     {/*<ReferenceLine x="20-06-09" label="3gs release date" stroke="red"/>*/}
 
                     {/*<Line type="monotone" dataKey="event" stroke="#880022" fill="url(#colorUv)" />*/}
-                    <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" />
+                    <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" dot={false}/>
                     {/*<ReferenceLine x="2008-06-09" isFront={true} label="3gs release date" stroke="red" label={<CustomLabel label={"3gs release date"}/>}/>*/}
                     {/*https://github.com/recharts/recharts/issues/720*/}
-                    <ReferenceLine x="2008-06-09" isFront={true} stroke="red" label={<Label value="3gs release date
-                    12.04.5" fill={'white'} />}/>
+                    { specialDates.map(({date, label}) => (
+                        <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20} value={label} fill="white" />} />
+                        )
+                    )}
+                    {/*<ReferenceLine x="2008-06-09" isFront={true} stroke="red" label={<Label value="3gs release date*/}
+                    {/*12.04.5" fill={'white'} />}/>*/}
                 </LineChart>
                 </ResponsiveContainer>
             </ChartWrapper>
@@ -161,5 +107,46 @@ const CustomTooltip = ({ active, payload, label }) => {
 
     return null;
 };
+
+const StatisticPageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    background: #121213;
+`;
+
+const IPhoneInfoWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    flex:3;
+`;
+
+const InfoTextWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+`
+
+const InfoWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+const InfoColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+`;
+
+const ChartWrapper = styled.div`
+    display: flex;
+    width: 100vw;
+    flex:1;
+`;
+
 
 export default StatisticPage

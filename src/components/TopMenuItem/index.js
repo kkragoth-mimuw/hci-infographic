@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { iphoneImgs, routesName } from "../../definitions";
 
 function TopMenuItem(props) {
-    const { val, idx, goToIndex } = props;
+    const { val, idx, goToIndex, currentIndex } = props;
     return (
         <TopMenuItemWrapper onClick={() => goToIndex(idx)}>
             <TopMenuItemImage>
                 <img src={iphoneImgs[val]} style={{width: '100%'}}/>
             </TopMenuItemImage>
             <TopMenuItemTextWrapper>
-                <TopMenuItemText>
+                <TopMenuItemText active={idx==currentIndex}>
                     { routesName[val] }
                 </TopMenuItemText>
             </TopMenuItemTextWrapper>

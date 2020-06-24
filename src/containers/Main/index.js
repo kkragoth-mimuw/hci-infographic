@@ -65,7 +65,7 @@ function Main(props) {
 
     return (
         <>
-            <TopMenu goToIndex={(indx) => goToIndex(indx)} />
+            <TopMenu goToIndex={(indx) => goToIndex(indx)} currentIndex={index} />
             <MainSwitch prevIndex={prevIndex} goingToLocation={goingToLocation} handlers={handlers} />
         </>
     )

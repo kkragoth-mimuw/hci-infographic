@@ -8,9 +8,10 @@ import TopMenuItem from "../../components/TopMenuItem";
 const TopMenuHeight = 60;
 
 function TopMenu(props) {
+    const { currentIndex } = props;
     return (
         <TopMenuWrapper className="noselect">
-            { mapIndexed((val, idx) => <TopMenuItem val={val} idx={idx+1} goToIndex={props.goToIndex}/>, routes) }
+            { mapIndexed((val, idx) => <TopMenuItem val={val} idx={idx+1} goToIndex={props.goToIndex} currentIndex={currentIndex+1}/>, routes) }
         </TopMenuWrapper>
     );
 }
