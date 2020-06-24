@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Area, AreaChart, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
+import {Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
 import Papa from 'papaparse';
 import { actionsCsv, iphoneImgs } from "../../definitions";
 
@@ -69,7 +69,8 @@ const ChartWrapper = styled.div`
 // ];
 
 const data = Papa.parse(actionsCsv, {header: true}).data;
-console.log(data);
+data[666]['event'] = 30;
+// console.log(data);
 
 function StatisticPage({val}) {
     return (
@@ -114,7 +115,7 @@ function StatisticPage({val}) {
                     }}
                 >
                     <defs>
-                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="100">
                             <stop offset="5%" stopColor="#0071E3" stopOpacity={0.3}/>
                             <stop offset="95%" stopColor="#0071E3" stopOpacity={1}/>
                         </linearGradient>
@@ -123,14 +124,42 @@ function StatisticPage({val}) {
                     <XAxis dataKey="Date" />
                     <YAxis />
                     <Tooltip />
-                    <ReferenceLine x="20-06-09" label="3gs release date" stroke="red"/>
-                    <ReferenceLine x="2008-06-09" label="3gs release date" stroke="red"/>
+                    {/*<Tooltip content={<CustomTooltip />} />*/}
+                    {/*<ReferenceLine x="20-06-09" label="3gs release date" stroke="red"/>*/}
+
+                    {/*<Line type="monotone" dataKey="event" stroke="#880022" fill="url(#colorUv)" />*/}
                     <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" />
+                    {/*<ReferenceLine x="2008-06-09" isFront={true} label="3gs release date" stroke="red" label={<CustomLabel label={"3gs release date"}/>}/>*/}
+                    {/*https://github.com/recharts/recharts/issues/720*/}
+                    <ReferenceLine x="2008-06-09" isFront={true} stroke="red" label={<Label value="3gs release date
+                    12.04.5" fill={'white'} />}/>
                 </LineChart>
                 </ResponsiveContainer>
             </ChartWrapper>
         </StatisticPageWrapper>
     )
 }
+
+const CustomLabel = (props) => {
+    const {x, y, stroke, value} = props;
+
+    return (<text x={x} y={y}   style={{ fill: 'white' }} >{value}</text>)
+
+}
+
+const CustomTooltip = ({ active, payload, label }) => {
+    if (active) {
+        console.log(payload);
+        return (
+            <div className="custom-tooltip" style={{background: 'white'}}>
+                <p className="label">{`${label} : ${payload[0].value}`}</p>
+                {/*<p className="intro">{getIntroOfPage(label)}</p>*/}
+                {/*<p className="desc">{payload[0]}</p>*/}
+            </div>
+        );
+    }
+
+    return null;
+};
 
 export default StatisticPage
