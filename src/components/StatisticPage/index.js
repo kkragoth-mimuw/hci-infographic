@@ -60,7 +60,7 @@ const data = [
 ];
 
 
-function StatisticPage(props) {
+function StatisticPage({val}) {
     return (
         <StatisticPageWrapper>
             <IPhoneInfoWrapper>
@@ -69,7 +69,7 @@ function StatisticPage(props) {
                 </div>
                 <InfoColumn>
                     <span style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
-                        iPhone 1
+                        {val}
                     </span>
                     <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '1.25rem', fontSize: '1rem'}}>
                         2gb ram

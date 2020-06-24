@@ -7,7 +7,7 @@ import {TopMenuHeight} from "../../containers/TopMenu";
 import StatisticPage from '../StatisticPage';
 
 
-function Page({color, prevIndex, index, myIndex, children}) {
+function Page({val, color, prevIndex, index, myIndex, children}) {
     const location = useLocation();
 
     const last_update = useEffect(() =>  () => console.log(color, location, index))
@@ -26,7 +26,7 @@ function Page({color, prevIndex, index, myIndex, children}) {
             exit={{ x: exitLocation}}
             transition={{ ease: "easeOut", duration: 0.4 }}
             style={{position: 'absolute', top:TopMenuHeight, left: 0,zIndex: 100-myIndex, width: '100vw', height: `calc(100vh - ${TopMenuHeight}px)`, backgroundColor: "424242"}}>
-            <StatisticPage/>
+            <StatisticPage val={val}/>
         </motion.div>
         // </AnimatePresence>
     )

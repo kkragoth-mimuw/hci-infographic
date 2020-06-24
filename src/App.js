@@ -7,15 +7,13 @@ import {
 } from "react-router-dom";
 
 import './App.css';
-import MainSwitch from "./containers/MainSwitch";
-import TopMenu from "./containers/TopMenu";
+import Main from "./containers/Main";
 
 function App(props) {
 
   return (
-      <Router basename={'/directory-name'}>
-        <TopMenu />
-        <MainSwitch/>
+      <Router>
+        <Main/>
       </Router>
   );
 }

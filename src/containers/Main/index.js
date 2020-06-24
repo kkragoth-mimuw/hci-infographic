@@ -1,0 +1,87 @@
+import React, {useEffect, useRef, useState} from 'react';
+import { useLocation } from 'react-router-dom';
+import {isNil, equals, findIndex} from "ramda";
+import { withRouter } from 'react-router-dom';
+
+import TopMenu from "../TopMenu";
+import MainSwitch from "../MainSwitch";
+
+
+const routes = [
+    '/iphone1',
+    '/iphone2',
+    '/iphone3',
+    '/iphone4',
+    '/iphone5',
+    '/iphone6'
+];
+
+function Main(props) {
+    const location = useLocation();
+
+    const index = findIndex(equals(location.pathname), routes);
+
+    console.log(index);
+
+    const [iphoneIndex, setIphoneIndex] = useState(index + 1);
+    const [goingToLocation, setGoingToLocation] = useState(null);
+
+    const goToIndex = React.useCallback((index) => {
+        console.log('set going to location ', index);
+
+        setGoingToLocation(index);
+    }, [props.history]);
+
+    useEffect(() => {
+        if (!isNil(goingToLocation)) {
+            setIphoneIndex(goingToLocation);
+            setGoingToLocation(null);
+            iphoneIndexRef.current = goingToLocation;
+            props.history.push('/iphone' + (iphoneIndexRef.current));
+        }
+    }, [goingToLocation]);
+
+    const iphoneIndexRef = useRef(iphoneIndex);
+
+    const goLeftHandler = React.useCallback(() => {
+        if (iphoneIndexRef.current > 1) {
+            setGoingToLocation(iphoneIndexRef.current - 1)
+        }
+    }, [props.history])
+
+
+    const goRightHandler = React.useCallback(() => {
+
+        if (iphoneIndexRef.current <= 3) {
+            setGoingToLocation(iphoneIndexRef.current + 1)
+        }
+    }, [iphoneIndex, props.history])
+
+    const handlers = {
+        GO_LEFT: goLeftHandler,
+        GO_RIGHT: goRightHandler
+    };
+
+    function usePrevious(value) {
+        const ref = useRef();
+        useEffect(() => {
+            ref.current = value;
+        });
+        return ref.current;
+    }
+
+    const prevIndex = usePrevious(iphoneIndex)
+
+    return (
+        <>
+            <TopMenu goToIndex={(indx) => goToIndex(indx)} />
+            <MainSwitch prevIndex={prevIndex} goingToLocation={goingToLocation} handlers={handlers} />
+        </>
+    )
+}
+
+export default withRouter(Main);
+
+export {
+    routes
+};

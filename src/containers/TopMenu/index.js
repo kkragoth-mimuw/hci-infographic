@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mapIndexed } from "../../utils";
 
+import { routes } from "../Main";
 import TopMenuItem from "../../components/TopMenuItem";
 
 const TopMenuHeight = 60;
 
 function TopMenu(props) {
     return (
-        <TopMenuWrapper>
-            { [0, 1, 2, 3, 4, 5].map(() => <TopMenuItem/>)}
+        <TopMenuWrapper className="noselect">
+            { mapIndexed((val, idx) => <TopMenuItem val={val} idx={idx+1} goToIndex={props.goToIndex}/>, routes) }
         </TopMenuWrapper>
     );
 }
 
 const TopMenuWrapper = styled.div`
-    position: absolute;
+    position: absolute; 
     top: 0;
     right: 0;
     display: flex;
