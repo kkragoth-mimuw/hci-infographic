@@ -9,7 +9,6 @@ import MainSwitch from "../MainSwitch";
 
 const routes = [
     '/iphone1',
-    '/iphone2',
     '/iphone3',
     '/iphone4',
     '/iphone5',
@@ -37,7 +36,7 @@ function Main(props) {
             setIphoneIndex(goingToLocation);
             setGoingToLocation(null);
             iphoneIndexRef.current = goingToLocation;
-            props.history.push('/iphone' + (iphoneIndexRef.current));
+            props.history.push(routes[iphoneIndexRef.current - 1]);
         }
     }, [goingToLocation]);
 

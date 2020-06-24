@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Area, AreaChart, LineChart, Line, ResponsiveContainer, CartesianGrid, CartesianAxis, Tooltip, XAxis, YAxis} from "recharts";
 
+import { iphone_imgs } from "../../definitions/imgs";
 import iphone1 from '../../assets/imgs/1.iPhone_1.png';
 
 const StatisticPageWrapper = styled.div`
@@ -65,7 +66,7 @@ function StatisticPage({val}) {
         <StatisticPageWrapper>
             <IPhoneInfoWrapper>
                 <div style={{height: '350px'}}>
-                    <img src={iphone1} style={{height: '100%'}} />
+                    <img src={iphone_imgs[val]} style={{height: '100%'}} />
                 </div>
                 <InfoColumn>
                     <span style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
