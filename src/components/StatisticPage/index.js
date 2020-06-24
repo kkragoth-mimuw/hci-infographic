@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import {Area, AreaChart, LineChart, Line, ResponsiveContainer, CartesianGrid, CartesianAxis, Tooltip, XAxis, YAxis} from "recharts";
-
-import { iphoneImgs } from "../../definitions";
+import {Area, AreaChart, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
+import Papa from 'papaparse';
+import { actionsCsv, iphoneImgs } from "../../definitions";
 
 const StatisticPageWrapper = styled.div`
     display: flex;
@@ -44,30 +44,32 @@ const ChartWrapper = styled.div`
     flex:1;
 `;
 
-const data = [
-    {
-        name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
-    },
-    {
-        name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
-    },
-    {
-        name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
-    },
-    {
-        name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
-    },
-    {
-        name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
-    },
-    {
-        name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
-    },
-    {
-        name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
-    },
-];
+// const data = [
+//     {
+//         name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+//     },
+//     {
+//         name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+//     },
+//     {
+//         name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+//     },
+//     {
+//         name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+//     },
+//     {
+//         name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+//     },
+//     {
+//         name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+//     },
+//     {
+//         name: 'Page G', uv: 3490, pv: 4300, amt: 2100,
+//     },
+// ];
 
+const data = Papa.parse(actionsCsv, {header: true}).data;
+console.log(data);
 
 function StatisticPage({val}) {
     return (
@@ -118,10 +120,12 @@ function StatisticPage({val}) {
                         </linearGradient>
                     </defs>
                     <CartesianGrid  vertical={false} opacity={0.2}/>
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="Date" />
                     <YAxis />
                     <Tooltip />
-                    <Line type="monotone" dataKey="uv" stroke="#0071E3" fill="url(#colorUv)" />
+                    <ReferenceLine x="20-06-09" label="3gs release date" stroke="red"/>
+                    <ReferenceLine x="2008-06-09" label="3gs release date" stroke="red"/>
+                    <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" />
                 </LineChart>
                 </ResponsiveContainer>
             </ChartWrapper>
