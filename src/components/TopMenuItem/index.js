@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
+import { iphoneImgs, routesName } from "../../definitions";
+
 function TopMenuItem(props) {
     const { val, idx, goToIndex } = props;
     return (
         <TopMenuItemWrapper onClick={() => goToIndex(idx)}>
-            <TopMenuItemImage/>
+            <TopMenuItemImage>
+                <img src={iphoneImgs[val]} style={{width: '100%'}}/>
+            </TopMenuItemImage>
             <TopMenuItemTextWrapper>
                 <TopMenuItemText>
-                    { val }
+                    { routesName[val] }
                 </TopMenuItemText>
             </TopMenuItemTextWrapper>
         </TopMenuItemWrapper>
@@ -22,10 +26,10 @@ const TopMenuItemWrapper = styled.div`
 `;
 
 const TopMenuItemImage = styled.div`
-    width: 3.5rem;
+    width: 3rem;
     height: 100%;
-    
-    background: red;
+    padding-top: 0.75rem;
+    overflow-y: hidden;
 `;
 
 const TopMenuItemText = styled.span`
@@ -41,6 +45,8 @@ const TopMenuItemTextWrapper = styled.div`
     align-items: flex-end;
     margin-left: 0.5rem;
     padding-bottom: 0.5rem;
+    font-family: 'Inter';
+    font-size: 1.15rem;
 `;
 
 export default TopMenuItem;

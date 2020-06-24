@@ -5,15 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import TopMenu from "../TopMenu";
 import MainSwitch from "../MainSwitch";
-
-
-const routes = [
-    '/iphone1',
-    '/iphone3',
-    '/iphone4',
-    '/iphone5',
-    '/iphone6'
-];
+import { routes } from "../../definitions";
 
 function Main(props) {
     const location = useLocation();

@@ -2,8 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {Area, AreaChart, LineChart, Line, ResponsiveContainer, CartesianGrid, CartesianAxis, Tooltip, XAxis, YAxis} from "recharts";
 
-import { iphone_imgs } from "../../definitions/imgs";
-import iphone1 from '../../assets/imgs/1.iPhone_1.png';
+import { iphoneImgs } from "../../definitions";
 
 const StatisticPageWrapper = styled.div`
     display: flex;
@@ -20,20 +19,29 @@ const IPhoneInfoWrapper = styled.div`
     justify-content: center;
     width: 100vw;
     flex:3;
-    // background: red;
+`;
+
+const InfoTextWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+`
+
+const InfoWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
 `;
 
 const InfoColumn = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
 `;
 
 const ChartWrapper = styled.div`
     display: flex;
     width: 100vw;
     flex:1;
-    // background: blue;
 `;
 
 const data = [
@@ -66,19 +74,34 @@ function StatisticPage({val}) {
         <StatisticPageWrapper>
             <IPhoneInfoWrapper>
                 <div style={{height: '350px'}}>
-                    <img src={iphone_imgs[val]} style={{height: '100%'}} />
+                    <img src={iphoneImgs[val]} style={{height: '100%'}} />
                 </div>
-                <InfoColumn>
+                <InfoTextWrapper>
                     <span style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
                         {val}
-                    </span>
-                    <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '1.25rem', fontSize: '1rem'}}>
+                </span>
+                    <InfoWrapper>
+                        <InfoColumn>
+                        <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '1.25rem', fontSize: '1rem'}}>
                         2gb ram
                     </span>
-                    <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '0.5rem', fontSize: '1rem'}}>
+                            <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '0.5rem', fontSize: '1rem'}}>
                         16gb
                     </span>
-                </InfoColumn>
+                        </InfoColumn>
+                        <InfoColumn>
+
+                        <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '1.25rem', fontSize: '1rem'}}>
+                        2gb ram
+                    </span>
+                            <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '0.5rem', fontSize: '1rem'}}>
+                        16gb
+                    </span>
+                        </InfoColumn>
+                    </InfoWrapper>
+                </InfoTextWrapper>
+
+
             </IPhoneInfoWrapper>
             <ChartWrapper>
                 <ResponsiveContainer>
