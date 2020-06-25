@@ -3,7 +3,9 @@ import Papa from 'papaparse';
 
 import iphone1_img from '../assets/imgs/1.iPhone_1.png';
 import iphone3_img from '../assets/imgs/2.IPhone_3G.png';
+import iphone3gs_img from '../assets/imgs/3.IPhone_3Gs.png';
 import iphone4_img from '../assets/imgs/4.IPhone_4.png';
+import iphone4s_img from '../assets/imgs/5.IPhone4S.png'
 import iphone5_img from '../assets/imgs/6.IPhone_5.png';
 import iphone6_img from '../assets/imgs/8.IPhone6.png';
 
