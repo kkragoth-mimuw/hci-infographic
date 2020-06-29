@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
 import { Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
-import { findIndex, propEq, slice } from "ramda";
+import {findIndex, length, max, propEq, slice} from "ramda";
 
 import { actionsCsv, iphoneImgs, specialDates, iphoneStats } from "../../definitions";
 
 function StatisticPage({val}) {
     const iphoneInfo = iphoneStats[val];
 
-    const { startDate, endDate } = iphoneInfo;
+    const { startDate, endDate, firstColumn, secondColumn } = iphoneInfo;
+
+    const columnHeight = max(length(firstColumn), length(secondColumn));
 
 
     const startDateIndex = findIndex(propEq('Date', startDate), actionsCsv);
@@ -17,37 +19,40 @@ function StatisticPage({val}) {
 
     return (
         <StatisticPageWrapper>
-            <IPhoneInfoWrapper>
-                <div style={{height: '350px'}}>
-                    <img src={iphoneImgs[val]} style={{height: '100%'}} />
-                </div>
-                <InfoTextWrapper>
-                    <span style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
+            <div style={{display: 'flex', flexDirection: 'row', width: '100vw', flex: 3}}>
+                <div>Timeline</div>
+                <IPhoneInfoWrapper>
+                    <div style={{height: '350px'}}>
+                        <img src={iphoneImgs[val]} style={{height: '100%'}} />
+                    </div>
+                    <InfoTextWrapper>
+                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
                         {iphoneInfo.title}
-                </span>
-                    <InfoWrapper>
-                        <InfoColumn>
-                        <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '1.25rem', fontSize: '1rem'}}>
-                        2gb ram
                     </span>
-                            <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '0.5rem', fontSize: '1rem'}}>
-                        16gb
-                    </span>
-                        </InfoColumn>
-                        <InfoColumn>
+                        <InfoWrapper>
+                            <InfoColumn>
+                                {
+                                    [...Array(columnHeight).keys()].map((i) =>
+                                        <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginTop: '1.25rem', fontSize: '1rem'}}>
+                                            {firstColumn[i] || ''}
+                                        </span>
+                                    )
+                                }
+                            </InfoColumn>
+                            <InfoColumn>
+                                {
+                                    [...Array(columnHeight).keys()].map((i) =>
+                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.6, marginTop: '1.25rem', fontSize: '1rem'}}>
+                                            {secondColumn[i] || ''}
+                                        </span>
+                                    )
+                                }
+                            </InfoColumn>
+                        </InfoWrapper>
+                    </InfoTextWrapper>
+                </IPhoneInfoWrapper>
+            </div>
 
-                        <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '1.25rem', fontSize: '1rem'}}>
-                        2gb ram
-                    </span>
-                            <span style={{fontFamily: 'Inter', color: "white", opacity: 0.5, marginTop: '0.5rem', fontSize: '1rem'}}>
-                        16gb
-                    </span>
-                        </InfoColumn>
-                    </InfoWrapper>
-                </InfoTextWrapper>
-
-
-            </IPhoneInfoWrapper>
             <ChartWrapper>
                 <ResponsiveContainer>
                 <LineChart
@@ -64,12 +69,9 @@ function StatisticPage({val}) {
                     </defs>
                     <CartesianGrid  vertical={false} opacity={0.2}/>
                     <XAxis dataKey="Date" />
-                    <YAxis />
+                    <YAxis type="number" domain={[0, 120]} label="Close in dollars"/>
                     <Tooltip />
-                    {/*<Tooltip content={<CustomTooltip />} />*/}
-                    {/*<ReferenceLine x="20-06-09" label="3gs release date" stroke="red"/>*/}
 
-                    {/*<Line type="monotone" dataKey="event" stroke="#880022" fill="url(#colorUv)" />*/}
                     <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" dot={false}/>
                     {/*<ReferenceLine x="2008-06-09" isFront={true} label="3gs release date" stroke="red" label={<CustomLabel label={"3gs release date"}/>}/>*/}
                     {/*https://github.com/recharts/recharts/issues/720*/}
@@ -85,28 +87,6 @@ function StatisticPage({val}) {
         </StatisticPageWrapper>
     )
 }
-
-const CustomLabel = (props) => {
-    const {x, y, stroke, value} = props;
-
-    return (<text x={x} y={y}   style={{ fill: 'white' }} >{value}</text>)
-
-}
-
-const CustomTooltip = ({ active, payload, label }) => {
-    if (active) {
-        console.log(payload);
-        return (
-            <div className="custom-tooltip" style={{background: 'white'}}>
-                <p className="label">{`${label} : ${payload[0].value}`}</p>
-                {/*<p className="intro">{getIntroOfPage(label)}</p>*/}
-                {/*<p className="desc">{payload[0]}</p>*/}
-            </div>
-        );
-    }
-
-    return null;
-};
 
 const StatisticPageWrapper = styled.div`
     display: flex;
