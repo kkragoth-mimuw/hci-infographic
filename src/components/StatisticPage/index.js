@@ -1,39 +1,50 @@
 import React from 'react';
 import styled from "styled-components";
 import { Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
-import {findIndex, length, max, propEq, slice} from "ramda";
+import {findIndex, length, max, propEq, slice, filter} from "ramda";
+import { useLocation, withRouter } from 'react-router-dom';
 
 import { actionsCsv, iphoneImgs, specialDates, iphoneStats } from "../../definitions";
 
 function StatisticPage({val}) {
+    const location = useLocation();
     const iphoneInfo = iphoneStats[val];
 
     const { startDate, endDate, firstColumn, secondColumn } = iphoneInfo;
 
     const columnHeight = max(length(firstColumn), length(secondColumn));
 
-
     const startDateIndex = findIndex(propEq('Date', startDate), actionsCsv);
     const endDateIndex = findIndex(propEq('Date', endDate), actionsCsv);
     const data = slice(startDateIndex, endDateIndex, actionsCsv);
+    const events = filter(propEq('showOn', location.pathname), specialDates);
 
     return (
         <StatisticPageWrapper>
             <div style={{display: 'flex', flexDirection: 'row', width: '100vw', flex: 3}}>
-                <div>Timeline</div>
+                <TimelineWrapper>
+                    <TimelineHeader>
+                    </TimelineHeader>
+                    { events.map(event => (
+                        <TimelineEntry>
+                            <TimelineEntryDate>{event.date}</TimelineEntryDate>
+                            <TimelineEntryLabel>{event.label}</TimelineEntryLabel>
+                        </TimelineEntry>
+                    ))}
+                </TimelineWrapper>
                 <IPhoneInfoWrapper>
                     <div style={{height: '350px'}}>
                         <img src={iphoneImgs[val]} style={{height: '100%'}} />
                     </div>
                     <InfoTextWrapper>
-                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '2rem'}}>
+                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '2rem', marginBottom: '1rem'}}>
                         {iphoneInfo.title}
                     </span>
                         <InfoWrapper>
                             <InfoColumn>
                                 {
                                     [...Array(columnHeight).keys()].map((i) =>
-                                        <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginTop: '1.25rem', fontSize: '1rem'}}>
+                                        <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginTop: '0.5rem', fontSize: '1rem'}}>
                                             {firstColumn[i] || ''}
                                         </span>
                                     )
@@ -42,7 +53,7 @@ function StatisticPage({val}) {
                             <InfoColumn>
                                 {
                                     [...Array(columnHeight).keys()].map((i) =>
-                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.6, marginTop: '1.25rem', fontSize: '1rem'}}>
+                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.70, marginTop: '0.5rem', fontSize: '1rem'}}>
                                             {secondColumn[i] || ''}
                                         </span>
                                     )
@@ -69,18 +80,15 @@ function StatisticPage({val}) {
                     </defs>
                     <CartesianGrid  vertical={false} opacity={0.2}/>
                     <XAxis dataKey="Date" />
-                    <YAxis type="number" domain={[0, 120]} label="Close in dollars"/>
+                    <YAxis type="number" domain={[0, 120]} />
                     <Tooltip />
 
                     <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" dot={false}/>
-                    {/*<ReferenceLine x="2008-06-09" isFront={true} label="3gs release date" stroke="red" label={<CustomLabel label={"3gs release date"}/>}/>*/}
                     {/*https://github.com/recharts/recharts/issues/720*/}
-                    { specialDates.map(({date, label}) => (
+                    { specialDates.filter(propEq('showOnChart', true)).map(({date, label}) => (
                         <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20} value={label} fill="white" />} />
                         )
                     )}
-                    {/*<ReferenceLine x="2008-06-09" isFront={true} stroke="red" label={<Label value="3gs release date*/}
-                    {/*12.04.5" fill={'white'} />}/>*/}
                 </LineChart>
                 </ResponsiveContainer>
             </ChartWrapper>
@@ -103,6 +111,7 @@ const IPhoneInfoWrapper = styled.div`
     justify-content: center;
     width: 100vw;
     flex:3;
+    margin-left: -2.5rem;
 `;
 
 const InfoTextWrapper = styled.div`
@@ -128,5 +137,40 @@ const ChartWrapper = styled.div`
     flex:1;
 `;
 
+const TimelineWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2.5rem;
+    
+    width: 20rem;
+`
 
-export default StatisticPage
+const TimelineHeader = styled.div`
+    color: white;
+    font-size: 1rem;
+    opacity: 0.4;
+`;
+
+const TimelineEntry = styled.div`
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const TimelineEntryDate = styled.span`
+    color: white;
+    font-weight: bold;
+    opacity: 0.7;
+    font-family: Inter;
+`;
+
+const TimelineEntryLabel = styled.span`
+    margin-left: 0.45rem;
+    color: #63636E;
+    font-family: Inter;
+`;
+
+export default withRouter(StatisticPage);

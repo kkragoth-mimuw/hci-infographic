@@ -18,7 +18,6 @@ const routes = [
     '/iphone3gs',
     '/iphone4',
     '/iphone4s',
-    '/iphone5',
 ];
 
 const routesName = zipObj(
@@ -29,7 +28,6 @@ const routesName = zipObj(
         'iPhone 3GS',
         'iPhone 4',
         'iPhone 4S',
-        'iPhone 5',
     ]
 );
 
@@ -41,7 +39,6 @@ const iphoneImgs = zipObj(
         iphone3gs_img,
         iphone4_img,
         iphone4s_img,
-        iphone5_img,
     ]
 );
 
@@ -53,12 +50,15 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '16 gb',
-                '512ram'
+                '128 MB eDRAM',
+                '4/8/16 GB flash memory',
+                '3.5" screen',
+                '2.0 MP camera'
             ],
             secondColumn: [
-                'secondaryText',
-                'greyedOutText'
+                '"Apple reinvents the phone."',
+                '$499 launch price',
+                '6.1 million units sold',
             ]
         },
         {
@@ -66,13 +66,15 @@ const iphoneStats = zipObj(
             startDate: '2009-02-23',
             endDate: '2011-09-14',
             firstColumn: [
-                '16 gb',
-                '512ram',
-                'different info'
+                '128 MB eDRAM',
+                '8/16 GB flash memory',
+                '3.5" screen',
+                '2.0 MP camera with geotagging'
             ],
             secondColumn: [
-                'secondaryText',
-                'greyedOutText'
+                '"The first phone to beat the iPhone."',
+                'new hardware features: GPS, 3G',
+                '$299/$499 launch price'
             ]
         },
         {
@@ -80,12 +82,13 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '16 gb',
-                '512ram'
+                '256 MB DRAM',
+                '8/16/32 GB',
+                '3MP with video'
             ],
             secondColumn: [
-                'secondaryText',
-                'greyedOutText'
+                '"The fastest, smartest phone yet."',
+                '$199/$299/$599/$699 launch prices'
             ]
         },
         {
@@ -93,12 +96,15 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '16 gb',
-                '512ram'
+                'Retina display',
+                '512 MB DRAM',
+                '8/16/32 GB',
+                '5 MP 720p Video'
             ],
             secondColumn: [
-                'secondaryText',
-                'greyedOutText'
+                '"This changes everything. Again."',
+                'brand new retina display',
+                'iOS4 introduces multitasking features'
             ]
         },
         {
@@ -106,25 +112,13 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '16 gb',
-                '512ram'
+                '512 MB DDR2 RAM',
+                '8/16/32/64 GB',
+                '8 MP 1080p Video'
             ],
             secondColumn: [
-                'secondaryText',
-                'greyedOutText'
-            ]
-        },
-        {
-            title: 'iPhone 5',
-            startDate: '2007-01-03',
-            endDate: '2012-08-21',
-            firstColumn: [
-                '16 gb',
-                '512ram'
-            ],
-            secondColumn: [
-                'secondaryText',
-                'greyedOutText'
+                '"The most amazing iPhone yet."',
+                '"S" stands for Siri'
             ]
         }
     ]
@@ -135,11 +129,34 @@ const specialDates = [
     {
         date: '2007-06-29',
         label: 'iPhone 1 Release',
+        showOn: routes[0],
+        showOnChart: true
     },
     {
         date: '2008-07-11',
         label: 'iPhone 3G Release',
+        showOn: routes[1],
+        showOnChart: true
     },
+    {
+        date: '2009-06-19',
+        label: 'iPhone 3GS Release',
+        showOn: routes[2],
+        showOnChart: true
+    },
+    {
+        date: '2010-06-21',
+        label: 'iPhone 4 Release',
+        showOn: routes[3],
+        showOnChart: true
+    },
+    {
+        date: '2011-10-14',
+        label: 'iPhone 4S release',
+        showOn: routes[4],
+        showOnChart: true
+    },
+
 ];
 
 export {

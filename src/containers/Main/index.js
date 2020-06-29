@@ -12,14 +12,10 @@ function Main(props) {
 
     const index = findIndex(equals(location.pathname), routes);
 
-    console.log(index);
-
     const [iphoneIndex, setIphoneIndex] = useState(index + 1);
     const [goingToLocation, setGoingToLocation] = useState(null);
 
     const goToIndex = React.useCallback((index) => {
-        console.log('set going to location ', index);
-
         setGoingToLocation(index);
     }, [props.history]);
 
@@ -58,7 +54,7 @@ function Main(props) {
         useEffect(() => {
             ref.current = value;
         });
-        return ref.current;
+        return ref.current || - 2;
     }
 
     const prevIndex = usePrevious(iphoneIndex)

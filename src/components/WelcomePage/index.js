@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from 'react-router-dom';
 
 import {TopMenuHeight} from "../../containers/TopMenu";
-import StatisticPage from '../StatisticPage';
+import styled from "styled-components";
 
 
-function Page({val, color, prevIndex, index, myIndex, children}) {
+function WelcomePage({val, color, prevIndex, index, myIndex, children}) {
     const location = useLocation();
 
     const initialLocation = (isNil(prevIndex) || prevIndex < myIndex) ? '100vw' : '-100vw';
@@ -21,9 +21,23 @@ function Page({val, color, prevIndex, index, myIndex, children}) {
             exit={{ x: exitLocation}}
             transition={{ ease: "easeOut", duration: 0.4 }}
             style={{position: 'absolute', top:TopMenuHeight, left: 0,zIndex: 100-myIndex, width: '100vw', height: `calc(100vh - ${TopMenuHeight}px)`, backgroundColor: "424242"}}>
-            <StatisticPage val={val}/>
+            <WelcomePageWrapper>
+                <p style={{fontFamily: 'inter', fontSize: '1.55rem', color: 'white', opacity: 0.8}}>Welcome!</p>
+                <p style={{fontFamily: 'inter', fontSize: '1.25rem', color: 'white', opacity: 0.8, marginTop: '0.5rem'}}>Select iPhone from Top Menu to view its stats</p>
+            </WelcomePageWrapper>
         </motion.div>
     )
 }
 
-export default Page;
+const WelcomePageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+    background: #121213;
+    justify-content: center;
+    align-items: center;
+`;
+
+
+export default WelcomePage;

@@ -15,6 +15,7 @@ import { withRouter } from 'react-router-dom';
 import { routes } from "../Main";
 import { mapIndexed } from "../../utils";
 import Page from '../../components/Page';
+import WelcomePage from "../../components/WelcomePage";
 
 const keyMap = {
     GO_LEFT: "left",
@@ -30,8 +31,11 @@ function MainSwitch(props) {
             <AnimatePresence initial={false}>
                 {location.pathname}
             <Switch location={location} key={location.pathname}>
+                <Route exact path="/">
+                    <WelcomePage />
+                </Route>
                 { mapIndexed((routeName, idx) => (
-                    <Route path={routeName}>
+                    <Route exact path={routeName}>
                         <Page prevIndex={prevIndex} index={goingToLocation} myIndex={idx + 1} val={routeName} />
                     </Route>
                     ), routes
