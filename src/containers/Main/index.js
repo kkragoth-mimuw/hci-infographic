@@ -39,7 +39,7 @@ function Main(props) {
 
     const goRightHandler = React.useCallback(() => {
 
-        if (iphoneIndexRef.current <= 3) {
+        if (iphoneIndexRef.current <= routes.length + 1) {
             setGoingToLocation(iphoneIndexRef.current + 1)
         }
     }, [iphoneIndex, props.history])
