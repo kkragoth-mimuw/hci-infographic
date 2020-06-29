@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/hci-infographic/static/css/main.db1fa0f3.chunk.css",
-    "main.js": "/hci-infographic/static/js/main.239ec4fb.chunk.js",
-    "main.js.map": "/hci-infographic/static/js/main.239ec4fb.chunk.js.map",
+    "main.js": "/hci-infographic/static/js/main.d9391e74.chunk.js",
+    "main.js.map": "/hci-infographic/static/js/main.d9391e74.chunk.js.map",
     "runtime-main.js": "/hci-infographic/static/js/runtime-main.c77b1dda.js",
     "runtime-main.js.map": "/hci-infographic/static/js/runtime-main.c77b1dda.js.map",
-    "static/js/2.1888c133.chunk.js": "/hci-infographic/static/js/2.1888c133.chunk.js",
-    "static/js/2.1888c133.chunk.js.map": "/hci-infographic/static/js/2.1888c133.chunk.js.map",
+    "static/js/2.06751eca.chunk.js": "/hci-infographic/static/js/2.06751eca.chunk.js",
+    "static/js/2.06751eca.chunk.js.map": "/hci-infographic/static/js/2.06751eca.chunk.js.map",
     "index.html": "/hci-infographic/index.html",
-    "precache-manifest.002aa4a43e4f1e248739c3f1de4d5732.js": "/hci-infographic/precache-manifest.002aa4a43e4f1e248739c3f1de4d5732.js",
+    "precache-manifest.c3d4485a4e093a4e142dd35f311f875b.js": "/hci-infographic/precache-manifest.c3d4485a4e093a4e142dd35f311f875b.js",
     "service-worker.js": "/hci-infographic/service-worker.js",
     "static/css/main.db1fa0f3.chunk.css.map": "/hci-infographic/static/css/main.db1fa0f3.chunk.css.map",
-    "static/js/2.1888c133.chunk.js.LICENSE.txt": "/hci-infographic/static/js/2.1888c133.chunk.js.LICENSE.txt",
+    "static/js/2.06751eca.chunk.js.LICENSE.txt": "/hci-infographic/static/js/2.06751eca.chunk.js.LICENSE.txt",
     "static/media/1.iPhone_1.png": "/hci-infographic/static/media/1.iPhone_1.06816e1c.png",
     "static/media/2.IPhone_3G.png": "/hci-infographic/static/media/2.IPhone_3G.6ede642e.png",
     "static/media/3.IPhone_3Gs.png": "/hci-infographic/static/media/3.IPhone_3Gs.6ede642e.png",
@@ -22,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c77b1dda.js",
-    "static/js/2.1888c133.chunk.js",
+    "static/js/2.06751eca.chunk.js",
     "static/css/main.db1fa0f3.chunk.css",
-    "static/js/main.239ec4fb.chunk.js"
+    "static/js/main.d9391e74.chunk.js"
   ]
 }
