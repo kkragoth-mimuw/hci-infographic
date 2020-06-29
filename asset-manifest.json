@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/hci-infographic/static/css/main.db1fa0f3.chunk.css",
+    "main.js": "/hci-infographic/static/js/main.239ec4fb.chunk.js",
+    "main.js.map": "/hci-infographic/static/js/main.239ec4fb.chunk.js.map",
+    "runtime-main.js": "/hci-infographic/static/js/runtime-main.c77b1dda.js",
+    "runtime-main.js.map": "/hci-infographic/static/js/runtime-main.c77b1dda.js.map",
+    "static/js/2.1888c133.chunk.js": "/hci-infographic/static/js/2.1888c133.chunk.js",
+    "static/js/2.1888c133.chunk.js.map": "/hci-infographic/static/js/2.1888c133.chunk.js.map",
+    "index.html": "/hci-infographic/index.html",
+    "precache-manifest.002aa4a43e4f1e248739c3f1de4d5732.js": "/hci-infographic/precache-manifest.002aa4a43e4f1e248739c3f1de4d5732.js",
+    "service-worker.js": "/hci-infographic/service-worker.js",
+    "static/css/main.db1fa0f3.chunk.css.map": "/hci-infographic/static/css/main.db1fa0f3.chunk.css.map",
+    "static/js/2.1888c133.chunk.js.LICENSE.txt": "/hci-infographic/static/js/2.1888c133.chunk.js.LICENSE.txt",
+    "static/media/1.iPhone_1.png": "/hci-infographic/static/media/1.iPhone_1.06816e1c.png",
+    "static/media/2.IPhone_3G.png": "/hci-infographic/static/media/2.IPhone_3G.6ede642e.png",
+    "static/media/3.IPhone_3Gs.png": "/hci-infographic/static/media/3.IPhone_3Gs.6ede642e.png",
+    "static/media/4.IPhone_4.png": "/hci-infographic/static/media/4.IPhone_4.418ba628.png",
+    "static/media/5.IPhone4S.png": "/hci-infographic/static/media/5.IPhone4S.20a1e4d6.png",
+    "static/media/6.IPhone_5.png": "/hci-infographic/static/media/6.IPhone_5.e83ec53c.png",
+    "static/media/index.css": "/hci-infographic/static/media/inter-regular.56786aa1.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c77b1dda.js",
+    "static/js/2.1888c133.chunk.js",
+    "static/css/main.db1fa0f3.chunk.css",
+    "static/js/main.239ec4fb.chunk.js"
+  ]
+}
