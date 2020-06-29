@@ -25,7 +25,8 @@ const TopMenuWrapper = styled.div`
     height: ${TopMenuHeight}px;
     max-height: ${TopMenuHeight}px;
     width: 100vw;
-    background: #171719
+    background: #171719;
+    overflow-y: hidden;
 `;
 
 export default TopMenu;

@@ -30,17 +30,17 @@ function MainSwitch(props) {
         <HotKeys focused={true} attach={window} keyMap={keyMap} handlers={handlers}>
             <AnimatePresence initial={false}>
                 {location.pathname}
-            <Switch location={location} key={location.pathname}>
-                <Route exact path="/">
-                    <WelcomePage />
-                </Route>
-                { mapIndexed((routeName, idx) => (
-                    <Route exact path={routeName}>
-                        <Page prevIndex={prevIndex} index={goingToLocation} myIndex={idx + 1} val={routeName} />
+                <Switch location={location} key={location.pathname}>
+                    <Route exact path="/">
+                        <WelcomePage />
                     </Route>
-                    ), routes
-                )}
-            </Switch>
+                    { mapIndexed((routeName, idx) => (
+                            <Route exact path={routeName}>
+                                <Page prevIndex={prevIndex} index={goingToLocation} myIndex={idx + 1} val={routeName} />
+                            </Route>
+                        ), routes
+                    )}
+                </Switch>
             </AnimatePresence>
         </HotKeys>
     );
