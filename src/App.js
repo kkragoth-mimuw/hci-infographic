@@ -12,7 +12,7 @@ import Main from "./containers/Main";
 function App(props) {
 
   return (
-      <Router>
+      <Router basename="hci-infographic">
         <Main/>
       </Router>
   );
