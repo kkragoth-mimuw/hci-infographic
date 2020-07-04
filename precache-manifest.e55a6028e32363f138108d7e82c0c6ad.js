@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "24cead504ed8963c998572c8cf77b3f3",
+    "revision": "b6cc8b5026141b5c0032b17cbc235a9d",
     "url": "/hci-infographic/index.html"
   },
   {
-    "revision": "20daafde5fbdd080af45",
-    "url": "/hci-infographic/static/css/main.db1fa0f3.chunk.css"
+    "revision": "19774731d62a3e62598a",
+    "url": "/hci-infographic/static/css/main.2e05336c.chunk.css"
   },
   {
     "revision": "58aec4768975ea1332bf",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hci-infographic/static/js/2.06751eca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "20daafde5fbdd080af45",
-    "url": "/hci-infographic/static/js/main.37548441.chunk.js"
+    "revision": "19774731d62a3e62598a",
+    "url": "/hci-infographic/static/js/main.c17b702d.chunk.js"
   },
   {
     "revision": "e2f7a4988496e9e22769",
@@ -50,5 +50,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "56786aa1952d68dada47626302897eae",
     "url": "/hci-infographic/static/media/inter-regular.56786aa1.ttf"
+  },
+  {
+    "revision": "ec60b23f3405050f546f4765a9e90fec",
+    "url": "/hci-infographic/static/media/inter-semibold.ec60b23f.ttf"
   }
 ]);

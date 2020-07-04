@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hci-infographic/static/css/main.db1fa0f3.chunk.css",
-    "main.js": "/hci-infographic/static/js/main.37548441.chunk.js",
-    "main.js.map": "/hci-infographic/static/js/main.37548441.chunk.js.map",
+    "main.css": "/hci-infographic/static/css/main.2e05336c.chunk.css",
+    "main.js": "/hci-infographic/static/js/main.c17b702d.chunk.js",
+    "main.js.map": "/hci-infographic/static/js/main.c17b702d.chunk.js.map",
     "runtime-main.js": "/hci-infographic/static/js/runtime-main.c77b1dda.js",
     "runtime-main.js.map": "/hci-infographic/static/js/runtime-main.c77b1dda.js.map",
     "static/js/2.06751eca.chunk.js": "/hci-infographic/static/js/2.06751eca.chunk.js",
     "static/js/2.06751eca.chunk.js.map": "/hci-infographic/static/js/2.06751eca.chunk.js.map",
     "index.html": "/hci-infographic/index.html",
-    "precache-manifest.58d3731fffa988b1a26c133a85ea9413.js": "/hci-infographic/precache-manifest.58d3731fffa988b1a26c133a85ea9413.js",
+    "precache-manifest.e55a6028e32363f138108d7e82c0c6ad.js": "/hci-infographic/precache-manifest.e55a6028e32363f138108d7e82c0c6ad.js",
     "service-worker.js": "/hci-infographic/service-worker.js",
-    "static/css/main.db1fa0f3.chunk.css.map": "/hci-infographic/static/css/main.db1fa0f3.chunk.css.map",
+    "static/css/main.2e05336c.chunk.css.map": "/hci-infographic/static/css/main.2e05336c.chunk.css.map",
     "static/js/2.06751eca.chunk.js.LICENSE.txt": "/hci-infographic/static/js/2.06751eca.chunk.js.LICENSE.txt",
     "static/media/1.iPhone_1.png": "/hci-infographic/static/media/1.iPhone_1.06816e1c.png",
     "static/media/2.IPhone_3G.png": "/hci-infographic/static/media/2.IPhone_3G.6ede642e.png",
@@ -18,12 +18,12 @@
     "static/media/4.IPhone_4.png": "/hci-infographic/static/media/4.IPhone_4.418ba628.png",
     "static/media/5.IPhone4S.png": "/hci-infographic/static/media/5.IPhone4S.20a1e4d6.png",
     "static/media/6.IPhone_5.png": "/hci-infographic/static/media/6.IPhone_5.e83ec53c.png",
-    "static/media/index.css": "/hci-infographic/static/media/inter-regular.56786aa1.ttf"
+    "static/media/index.css": "/hci-infographic/static/media/inter-semibold.ec60b23f.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.c77b1dda.js",
     "static/js/2.06751eca.chunk.js",
-    "static/css/main.db1fa0f3.chunk.css",
-    "static/js/main.37548441.chunk.js"
+    "static/css/main.2e05336c.chunk.css",
+    "static/js/main.c17b702d.chunk.js"
   ]
 }
