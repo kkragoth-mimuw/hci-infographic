@@ -23,11 +23,11 @@ function StatisticPage({val}) {
         <StatisticPageWrapper>
             <div style={{display: 'flex', flexDirection: 'row', width: '100vw', flex: 3}}>
                 <IPhoneInfoWrapper>
-                    <div style={{height: '460px', marginTop: '2rem'}}>
+                    <div style={{height: '400px', marginTop: '2.5rem'}}>
                         <img src={iphoneImgs[val]} style={{height: '100%'}} />
                     </div>
                     <InfoTextWrapper>
-                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '52px', marginBottom: '1rem'}}>
+                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '2rem', marginBottom: '1rem'}}>
                         {iphoneInfo.title}
                     </span>
                         <InfoWrapper>
@@ -35,10 +35,10 @@ function StatisticPage({val}) {
                                 {
                                     [...Array(columnHeight).keys()].map((i) =>
                                         <div style={{marginTop: '1.5rem'}}>
-                                            <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, fontSize: '28px'}}>
+                                            <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, fontSize: '1.5rem'}}>
                                                 {isNil(firstColumn[i]) || isNil(firstColumn[i])[0] ? '' : firstColumn[i][0]}
                                             </span>
-                                            <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginLeft: '0.25rem', fontSize: '18px'}}>
+                                            <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginLeft: '0.25rem', fontSize: '1rem'}}>
                                                 {isNil(firstColumn[i]) || isNil(firstColumn[i])[1] ? '' : firstColumn[i][1]}
                                             </span>
                                         </div>
@@ -48,7 +48,7 @@ function StatisticPage({val}) {
                             <InfoColumn style={{marginLeft: '2.5rem'}}>
                                 {
                                     [...Array(columnHeight).keys()].map((i) =>
-                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.70, marginTop: '2.25rem', fontSize: '18px'}}>
+                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.70, marginTop: '2rem', fontSize: '1rem'}}>
                                             {secondColumn[i] || ''}
                                         </span>
                                     )
