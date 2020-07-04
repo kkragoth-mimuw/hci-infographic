@@ -23,10 +23,12 @@ const TopMenuItemWrapper = styled.div`
     display: flex;
     height: 100%;
     cursor: pointer;
+    margin-left: 2rem;
+    margin-right: 2rem;
 `;
 
 const TopMenuItemImage = styled.div`
-    width: 3rem;
+    width: 2.5rem;
     height: 100%;
     padding-top: 0.75rem;
     overflow-y: hidden;
@@ -46,7 +48,7 @@ const TopMenuItemTextWrapper = styled.div`
     margin-left: 0.5rem;
     padding-bottom: 0.5rem;
     font-family: 'Inter';
-    font-size: 1.15rem;
+    font-size: 0.85rem;
 `;
 
 export default TopMenuItem;

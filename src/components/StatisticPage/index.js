@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
-import {findIndex, length, max, propEq, slice, filter} from "ramda";
+import {findIndex, length, max, propEq, slice, filter, isNil} from "ramda";
 import { useLocation, withRouter } from 'react-router-dom';
 
 import { actionsCsv, iphoneImgs, specialDates, iphoneStats } from "../../definitions";
@@ -22,6 +22,41 @@ function StatisticPage({val}) {
     return (
         <StatisticPageWrapper>
             <div style={{display: 'flex', flexDirection: 'row', width: '100vw', flex: 3}}>
+                <IPhoneInfoWrapper>
+                    <div style={{height: '460px', marginTop: '2rem'}}>
+                        <img src={iphoneImgs[val]} style={{height: '100%'}} />
+                    </div>
+                    <InfoTextWrapper>
+                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '52px', marginBottom: '1rem'}}>
+                        {iphoneInfo.title}
+                    </span>
+                        <InfoWrapper>
+                            <InfoColumn>
+                                {
+                                    [...Array(columnHeight).keys()].map((i) =>
+                                        <div style={{marginTop: '1.5rem'}}>
+                                            <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, fontSize: '28px'}}>
+                                                {isNil(firstColumn[i]) || isNil(firstColumn[i])[0] ? '' : firstColumn[i][0]}
+                                            </span>
+                                            <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginLeft: '0.25rem', fontSize: '18px'}}>
+                                                {isNil(firstColumn[i]) || isNil(firstColumn[i])[1] ? '' : firstColumn[i][1]}
+                                            </span>
+                                        </div>
+                                    )
+                                }
+                            </InfoColumn>
+                            <InfoColumn style={{marginLeft: '2.5rem'}}>
+                                {
+                                    [...Array(columnHeight).keys()].map((i) =>
+                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.70, marginTop: '2.25rem', fontSize: '18px'}}>
+                                            {secondColumn[i] || ''}
+                                        </span>
+                                    )
+                                }
+                            </InfoColumn>
+                        </InfoWrapper>
+                    </InfoTextWrapper>
+                </IPhoneInfoWrapper>
                 <TimelineWrapper>
                     <TimelineHeader>
                     </TimelineHeader>
@@ -32,36 +67,6 @@ function StatisticPage({val}) {
                         </TimelineEntry>
                     ))}
                 </TimelineWrapper>
-                <IPhoneInfoWrapper>
-                    <div style={{height: '350px'}}>
-                        <img src={iphoneImgs[val]} style={{height: '100%'}} />
-                    </div>
-                    <InfoTextWrapper>
-                    <span className="noselect" style={{fontFamily: 'Inter', color: "white", fontSize: '2rem', marginBottom: '1rem'}}>
-                        {iphoneInfo.title}
-                    </span>
-                        <InfoWrapper>
-                            <InfoColumn>
-                                {
-                                    [...Array(columnHeight).keys()].map((i) =>
-                                        <span style={{fontFamily: 'Inter', fontWeight: 'bold', color: "#63636E", opacity: 1, marginTop: '0.5rem', fontSize: '1rem'}}>
-                                            {firstColumn[i] || ''}
-                                        </span>
-                                    )
-                                }
-                            </InfoColumn>
-                            <InfoColumn>
-                                {
-                                    [...Array(columnHeight).keys()].map((i) =>
-                                        <span style={{fontFamily: 'Inter', color: "#63636E", opacity: 0.70, marginTop: '0.5rem', fontSize: '1rem'}}>
-                                            {secondColumn[i] || ''}
-                                        </span>
-                                    )
-                                }
-                            </InfoColumn>
-                        </InfoWrapper>
-                    </InfoTextWrapper>
-                </IPhoneInfoWrapper>
             </div>
 
             <ChartWrapper>
@@ -107,17 +112,19 @@ const StatisticPageWrapper = styled.div`
 const IPhoneInfoWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 100vw;
     flex:3;
-    margin-left: -2.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 `;
 
 const InfoTextWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 2rem;
+    margin-left: 4rem;
+    padding-top: 4.5rem;
 `
 
 const InfoWrapper = styled.div`
@@ -128,7 +135,6 @@ const InfoWrapper = styled.div`
 const InfoColumn = styled.div`
     display: flex;
     flex-direction: column;
-    margin-left: 0.5rem;
 `;
 
 const ChartWrapper = styled.div`
@@ -143,7 +149,7 @@ const TimelineWrapper = styled.div`
     align-items: center;
     padding-top: 2.5rem;
     
-    width: 20rem;
+    width: 24rem;
 `
 
 const TimelineHeader = styled.div`

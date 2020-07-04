@@ -50,10 +50,10 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '128 MB eDRAM',
-                '4/8/16 GB flash memory',
-                '3.5" screen',
-                '2.0 MP camera'
+                ['128', 'MB eDRAM'],
+                ['4/8/16', 'GB flash memory'],
+                ['3.5"', 'screen'],
+                ['2.0', 'MP camera']
             ],
             secondColumn: [
                 '"Apple reinvents the phone."',
@@ -66,10 +66,10 @@ const iphoneStats = zipObj(
             startDate: '2009-02-23',
             endDate: '2011-09-14',
             firstColumn: [
-                '128 MB eDRAM',
-                '8/16 GB flash memory',
-                '3.5" screen',
-                '2.0 MP camera with geotagging'
+                ['128', 'MB eDRAM'],
+                ['8/16', 'GB flash memory'],
+                ['3.5"', 'screen'],
+                ['2.0', 'MP camera with geotagging']
             ],
             secondColumn: [
                 '"The first phone to beat the iPhone."',
@@ -82,9 +82,9 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '256 MB DRAM',
-                '8/16/32 GB',
-                '3MP with video'
+                ['256', 'MB DRAM'],
+                ['8/16/32', 'GB'],
+                ['3', 'MP with video']
             ],
             secondColumn: [
                 '"The fastest, smartest phone yet."',
@@ -96,14 +96,13 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                'Retina display',
-                '512 MB DRAM',
-                '8/16/32 GB',
-                '5 MP 720p Video'
+                ['512', 'MB DRAM'],
+                ['8/16/32', 'GB'],
+                ['5', 'MP 720p Video']
             ],
             secondColumn: [
                 '"This changes everything. Again."',
-                'brand new retina display',
+                'brand new Retina display',
                 'iOS4 introduces multitasking features'
             ]
         },
@@ -112,9 +111,9 @@ const iphoneStats = zipObj(
             startDate: '2007-01-03',
             endDate: '2012-08-21',
             firstColumn: [
-                '512 MB DDR2 RAM',
-                '8/16/32/64 GB',
-                '8 MP 1080p Video'
+                ['512', 'MB DDR2 RAM'],
+                ['8/16/32/64', 'GB'],
+                ['8', 'MP 1080p Video']
             ],
             secondColumn: [
                 '"The most amazing iPhone yet."',

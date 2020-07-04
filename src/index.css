@@ -5,6 +5,13 @@
   src: url('./assets/fonts/inter-regular.ttf') format('truetype')
 }
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/inter-semibold.ttf') format('truetype')
+}
+
 .root {
   position: relative;
   width: 100vw;

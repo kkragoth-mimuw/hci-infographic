@@ -5,7 +5,7 @@ import { mapIndexed } from "../../utils";
 import { routes } from "../Main";
 import TopMenuItem from "../../components/TopMenuItem";
 
-const TopMenuHeight = 60;
+const TopMenuHeight = 50;
 
 function TopMenu(props) {
     const { currentIndex } = props;
@@ -25,8 +25,10 @@ const TopMenuWrapper = styled.div`
     height: ${TopMenuHeight}px;
     max-height: ${TopMenuHeight}px;
     width: 100vw;
+    max-width: 100vw;
     background: #171719;
     overflow-y: hidden;
+    overflow-x: scroll;
 `;
 
 export default TopMenu;
