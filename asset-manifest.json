@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/hci-infographic/static/css/main.2e05336c.chunk.css",
-    "main.js": "/hci-infographic/static/js/main.c17b702d.chunk.js",
-    "main.js.map": "/hci-infographic/static/js/main.c17b702d.chunk.js.map",
+    "main.js": "/hci-infographic/static/js/main.0b371d7e.chunk.js",
+    "main.js.map": "/hci-infographic/static/js/main.0b371d7e.chunk.js.map",
     "runtime-main.js": "/hci-infographic/static/js/runtime-main.c77b1dda.js",
     "runtime-main.js.map": "/hci-infographic/static/js/runtime-main.c77b1dda.js.map",
     "static/js/2.06751eca.chunk.js": "/hci-infographic/static/js/2.06751eca.chunk.js",
     "static/js/2.06751eca.chunk.js.map": "/hci-infographic/static/js/2.06751eca.chunk.js.map",
     "index.html": "/hci-infographic/index.html",
-    "precache-manifest.e55a6028e32363f138108d7e82c0c6ad.js": "/hci-infographic/precache-manifest.e55a6028e32363f138108d7e82c0c6ad.js",
+    "precache-manifest.e49642c91348cdedf1a4f65d5fd51c45.js": "/hci-infographic/precache-manifest.e49642c91348cdedf1a4f65d5fd51c45.js",
     "service-worker.js": "/hci-infographic/service-worker.js",
     "static/css/main.2e05336c.chunk.css.map": "/hci-infographic/static/css/main.2e05336c.chunk.css.map",
     "static/js/2.06751eca.chunk.js.LICENSE.txt": "/hci-infographic/static/js/2.06751eca.chunk.js.LICENSE.txt",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.c77b1dda.js",
     "static/js/2.06751eca.chunk.js",
     "static/css/main.2e05336c.chunk.css",
-    "static/js/main.c17b702d.chunk.js"
+    "static/js/main.0b371d7e.chunk.js"
   ]
 }
