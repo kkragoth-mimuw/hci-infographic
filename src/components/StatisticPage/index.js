@@ -118,6 +118,7 @@ const IPhoneInfoWrapper = styled.div`
     flex:3;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    padding-left: 3rem;
 `;
 
 const InfoTextWrapper = styled.div`
