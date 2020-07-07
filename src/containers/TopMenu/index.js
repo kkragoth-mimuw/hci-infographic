@@ -29,6 +29,12 @@ const TopMenuWrapper = styled.div`
     background: #171719;
     overflow-y: hidden;
     overflow-x: scroll;
+    
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    ::-webkit-scrollbar {
+      display: none;
+    }
 `;
 
 export default TopMenu;
