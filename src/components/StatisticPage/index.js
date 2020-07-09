@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Label, LineChart, Line, ResponsiveContainer, CartesianGrid, ReferenceLine, Tooltip, XAxis, YAxis} from "recharts";
 import {findIndex, length, max, propEq, slice, filter, isNil} from "ramda";
 import { useLocation, withRouter } from 'react-router-dom';
+import { mapIndexed } from "../../utils";
 
 import { actionsCsv, iphoneImgs, specialDates, iphoneStats } from "../../definitions";
 
@@ -90,10 +91,12 @@ function StatisticPage({val}) {
 
                     <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" dot={false}/>
                     {/*https://github.com/recharts/recharts/issues/720*/}
-                    { specialDates.filter(propEq('showOnChart', true)).map(({date, shortLabel}) => (
-                        <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20} value={shortLabel} fill="white" />} />
-                        )
-                    )}
+                    {
+                    }
+                    {mapIndexed(({date, shortLabel}, i) =>
+                        <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20 - (i * 20)} value={shortLabel} fill="white"/>}/>
+                    , specialDates.filter(propEq('showOnChart', true)).filter(propEq('showOn', location.pathname)))
+                    }
                 </LineChart>
                 </ResponsiveContainer>
             </ChartWrapper>
