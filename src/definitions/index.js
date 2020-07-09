@@ -47,8 +47,8 @@ const iphoneStats = zipObj(
     [
         {
             title: 'iPhone 1',
-            startDate: '2007-06-29',
-            endDate: '2008-07-11',
+            startDate: '2007-03-29',
+            endDate: '2008-10-11',
             firstColumn: [
                 ['128', 'MB eDRAM'],
                 ['4/8/16', 'GB flash memory'],
@@ -63,8 +63,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 3G',
-            startDate: '2008-07-11',
-            endDate: '2009-06-19',
+            startDate: '2008-04-11',
+            endDate: '2009-09-19',
             firstColumn: [
                 ['128', 'MB eDRAM'],
                 ['8/16', 'GB flash memory'],
@@ -79,8 +79,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 3GS',
-            startDate: '2009-06-19',
-            endDate: '2010-06-24',
+            startDate: '2009-03-19',
+            endDate: '2010-09-24',
             firstColumn: [
                 ['256', 'MB DRAM'],
                 ['8/16/32', 'GB'],
@@ -93,8 +93,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 4',
-            startDate: '2010-06-24',
-            endDate: '2011-11-14',
+            startDate: '2010-03-24',
+            endDate: '2012-02-14',
             firstColumn: [
                 ['512', 'MB DRAM'],
                 ['8/16/32', 'GB'],
@@ -108,8 +108,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 4S',
-            startDate: '2011-11-14',
-            endDate: '2012-08-21',
+            startDate: '2011-09-14',
+            endDate: '2012-11-21',
             firstColumn: [
                 ['512', 'MB DDR2 RAM'],
                 ['8/16/32/64', 'GB'],
@@ -171,7 +171,7 @@ const specialDates = [
         date: '2009-06-08',
         label: 'Mac OS X Snow Leopard Release',
         shortLabel: 'Snow Leopard',
-        showOn: routes[0],
+        showOn: routes[1],
         showOnChart: true
     },
     {
@@ -206,7 +206,7 @@ const specialDates = [
         date: '2011-04-21',
         label: "Apple stock outperforms Microsoft's",
         shortLabel: 'Apple outperforms Microsoft',
-        showOn: routes[4],
+        showOn: routes[3],
         showOnChart: true
     },
     {
