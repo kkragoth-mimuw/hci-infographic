@@ -47,8 +47,8 @@ const iphoneStats = zipObj(
     [
         {
             title: 'iPhone 1',
-            startDate: '2007-01-03',
-            endDate: '2012-08-21',
+            startDate: '2007-06-29',
+            endDate: '2008-07-11',
             firstColumn: [
                 ['128', 'MB eDRAM'],
                 ['4/8/16', 'GB flash memory'],
@@ -63,8 +63,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 3G',
-            startDate: '2009-02-23',
-            endDate: '2011-09-14',
+            startDate: '2008-07-11',
+            endDate: '2009-06-19',
             firstColumn: [
                 ['128', 'MB eDRAM'],
                 ['8/16', 'GB flash memory'],
@@ -79,8 +79,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 3GS',
-            startDate: '2007-01-03',
-            endDate: '2012-08-21',
+            startDate: '2009-06-19',
+            endDate: '2010-06-24',
             firstColumn: [
                 ['256', 'MB DRAM'],
                 ['8/16/32', 'GB'],
@@ -93,8 +93,8 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 4',
-            startDate: '2007-01-03',
-            endDate: '2012-08-21',
+            startDate: '2010-06-24',
+            endDate: '2011-11-14',
             firstColumn: [
                 ['512', 'MB DRAM'],
                 ['8/16/32', 'GB'],
@@ -108,7 +108,7 @@ const iphoneStats = zipObj(
         },
         {
             title: 'iPhone 4S',
-            startDate: '2007-01-03',
+            startDate: '2011-11-14',
             endDate: '2012-08-21',
             firstColumn: [
                 ['512', 'MB DDR2 RAM'],
@@ -132,14 +132,56 @@ const specialDates = [
         showOnChart: true
     },
     {
+        date: '2007-10-26',
+        label: 'Mac OS X Leopard Release',
+        showOn: routes[0],
+        showOnChart: true
+    },
+    {
+        date: '2008-01-29',
+        label: 'MacBook Air Release',
+        showOn: routes[0],
+        showOnChart: true
+    },
+    {
+        date: '2008-07-10',
+        label: 'Apple introduced native mobile apps for iOS',
+        showOn: routes[0],
+        showOnChart: true
+    },
+    {
         date: '2008-07-11',
         label: 'iPhone 3G Release',
         showOn: routes[1],
         showOnChart: true
     },
     {
+        date: '2008-09-15',
+        label: 'Lehman Brothers declared bankruptcy',
+        showOn: routes[1],
+        showOnChart: true
+    },
+    {
+        date: '2009-06-08',
+        label: 'Mac OS X Snow Leopard Release',
+        showOn: routes[0],
+        showOnChart: true
+    },
+    {
         date: '2009-06-19',
         label: 'iPhone 3GS Release',
+        showOn: routes[2],
+        showOnChart: true
+    },
+    {
+        date: '2009-07-24',
+        label: "Obama's economic stimulus plan",
+        showOn: routes[2],
+        showOnChart: true
+    },
+    {
+        date: '2010-04-01',
+        label: 'iPad Release',
         showOn: routes[2],
         showOnChart: true
     },
@@ -150,8 +192,32 @@ const specialDates = [
         showOnChart: true
     },
     {
+        date: '2011-04-21',
+        label: "Apple stock outperforms Microsoft's",
+        showOn: routes[4],
+        showOnChart: true
+    },
+    {
         date: '2011-10-14',
         label: 'iPhone 4S release',
+        showOn: routes[4],
+        showOnChart: true
+    },
+    {
+        date: '2011-10-12',
+        label: 'iOS 5 release',
+        showOn: routes[4],
+        showOnChart: true
+    },
+    {
+        date: '2011-10-05',
+        label: 'Steve Jobs dies; Tim Cook takes over',
+        showOn: routes[4],
+        showOnChart: true
+    },
+    {
+        date: '2011-07-20',
+        label: 'Mac OS X Lion Release',
         showOn: routes[4],
         showOnChart: true
     },
