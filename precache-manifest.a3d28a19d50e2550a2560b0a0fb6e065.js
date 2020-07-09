@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3fb5b3ba37983e1af50997c746b13cf8",
+    "revision": "62b1a98339f60f0cc25a6fe6e9538094",
     "url": "/hci-infographic/index.html"
   },
   {
-    "revision": "4528b7b8bb32e08f08af",
+    "revision": "8caf3e4b86a344f8eadf",
     "url": "/hci-infographic/static/css/main.2e05336c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hci-infographic/static/js/2.06751eca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4528b7b8bb32e08f08af",
-    "url": "/hci-infographic/static/js/main.cf851118.chunk.js"
+    "revision": "8caf3e4b86a344f8eadf",
+    "url": "/hci-infographic/static/js/main.b34411af.chunk.js"
   },
   {
     "revision": "e2f7a4988496e9e22769",
