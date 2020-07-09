@@ -217,13 +217,6 @@ const specialDates = [
         showOnChart: true
     },
     {
-        date: '2011-10-12',
-        label: 'iOS 5 release',
-        shortLabel: 'iOS 5',
-        showOn: routes[4],
-        showOnChart: true
-    },
-    {
         date: '2011-10-05',
         label: 'Steve Jobs dies; Tim Cook takes over',
         shortLabel: "Steve Jobs' Death",
@@ -231,12 +224,19 @@ const specialDates = [
         showOnChart: true
     },
     {
-        date: '2011-07-20',
-        label: 'Mac OS X Lion Release',
-        shortLabel: 'Lion Release',
+        date: '2012-03-19',
+        label: 'Apple announces plans to initiate a dividend and share repurchase program',
+        shortLabel: 'Repurchase program',
         showOn: routes[4],
         showOnChart: true
     },
+    {
+        date: '2012-06-11',
+        label: 'First Retina MacBook Pro Release',
+        shortLabel: 'First Retina Macbook',
+        showOn: routes[4],
+        showOnChart: true
+    }
 ];
 
 export {

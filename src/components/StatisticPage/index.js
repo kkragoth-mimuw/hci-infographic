@@ -97,7 +97,7 @@ function StatisticPage({val}) {
                     }
                     {mapIndexed(({date, shortLabel}, i) =>
                         <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20 - (i * 20)} value={shortLabel} fill="white"/>}/>
-                    , specialDates.filter(propEq('showOnChart', true)).filter(propEq('showOn', location.pathname)))
+                    , events)
                     }
                 </LineChart>
                 </ResponsiveContainer>
