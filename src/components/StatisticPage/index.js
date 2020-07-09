@@ -90,8 +90,8 @@ function StatisticPage({val}) {
 
                     <Line type="monotone" dataKey="Close" stroke="#0071E3" fill="url(#colorUv)" dot={false}/>
                     {/*https://github.com/recharts/recharts/issues/720*/}
-                    { specialDates.filter(propEq('showOnChart', true)).map(({date, label}) => (
-                        <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20} value={label} fill="white" />} />
+                    { specialDates.filter(propEq('showOnChart', true)).map(({date, shortLabel}) => (
+                        <ReferenceLine x={date} isFront stroke="red" label={<Label position="top" offset={-20} value={shortLabel} fill="white" />} />
                         )
                     )}
                 </LineChart>
@@ -178,6 +178,8 @@ const TimelineEntryLabel = styled.span`
     margin-left: 0.45rem;
     color: #63636E;
     font-family: Inter;
+    width: 9rem;
+    margin-left: 1rem;
 `;
 
 export default withRouter(StatisticPage);
