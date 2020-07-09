@@ -48,7 +48,7 @@ const iphoneStats = zipObj(
         {
             title: 'iPhone 1',
             startDate: '2007-03-29',
-            endDate: '2008-10-11',
+            endDate: '2008-10-10',
             firstColumn: [
                 ['128', 'MB eDRAM'],
                 ['4/8/16', 'GB flash memory'],
@@ -64,7 +64,7 @@ const iphoneStats = zipObj(
         {
             title: 'iPhone 3G',
             startDate: '2008-04-11',
-            endDate: '2009-09-19',
+            endDate: '2009-09-21',
             firstColumn: [
                 ['128', 'MB eDRAM'],
                 ['8/16', 'GB flash memory'],
@@ -198,7 +198,7 @@ const specialDates = [
     {
         date: '2010-06-21',
         label: 'iPhone 4 Release',
-        shortLabel: '4 Release',
+        shortLabel: 'iPhone 4 Release',
         showOn: routes[3],
         showOnChart: true
     },
@@ -237,7 +237,6 @@ const specialDates = [
         showOn: routes[4],
         showOnChart: true
     },
-
 ];
 
 export {

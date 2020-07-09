@@ -18,7 +18,9 @@ function StatisticPage({val}) {
     const startDateIndex = findIndex(propEq('Date', startDate), actionsCsv);
     const endDateIndex = findIndex(propEq('Date', endDate), actionsCsv);
     const data = slice(startDateIndex, endDateIndex, actionsCsv);
-    const events = filter(propEq('showOn', location.pathname), specialDates);
+    const events = filter(propEq('showOn', location.pathname), specialDates).sort(function(a,b){
+        return new Date(a.date) - new Date(b.date);
+    });
 
     return (
         <StatisticPageWrapper>
